@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "../transpiled",
+    "target": "esnext",
+    "module": "commonjs",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "webworker"],
+    "typeRoots": [
+      "../node_modules/@types",
+      "../node_modules/@cloudflare/workers-types"
+    ]
+  },
+  "include": ["./*.ts", "../node_modules/@cloudflare/workers-types/index.d.ts"]
+}

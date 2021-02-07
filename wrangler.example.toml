@@ -1,0 +1,12 @@
+name = "api-worker"
+type = "webpack"
+workers_dev = true
+route = ""
+webpack_config = "webpack.config.js"
+
+account_id = ""
+zone_id = ""
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+route = ""

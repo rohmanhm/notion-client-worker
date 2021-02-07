@@ -1,0 +1,40 @@
+{
+  "name": "notion-client-worker",
+  "version": "0.1.0",
+  "description": "Notion Client Cloudflare Worker",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "wrangler dev",
+    "preview": "wrangler preview",
+    "deploy": "wrangler publish -e production",
+    "format": "prettier --write '**/*.{ts,js,css,json,md}'",
+    "test:clean": "rimraf ./transpiled/src ./transpiled/test",
+    "test": "npm run test:clean && npm run transpile && mocha --require source-map-support/register --recursive transpiled/test",
+    "transpile": "tsc --project ./test"
+  },
+  "author": "Rohman HM",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/service-worker-mock": "^2.0.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "service-worker-mock": "^2.0.5",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "ky": "^0.26.0",
+    "notion-types": "^4.0.0",
+    "notion-utils": "^4.2.11",
+    "p-map": "^4.0.0",
+    "tiny-request-router": "^1.2.2"
+  }
+}
